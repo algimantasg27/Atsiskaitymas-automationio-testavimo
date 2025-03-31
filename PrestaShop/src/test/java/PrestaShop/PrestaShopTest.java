@@ -43,4 +43,28 @@ public class PrestaShopTest extends BaseTest{
 
         assertTrue(contactUsPage.getTitleMessage().contains(errorMessage));
     }
+
+    @Test
+    void TestData() {
+        String item1 = "Hummingbird printed t-shirt";
+        String wishlistText = "You need to be logged in to save products in your wishlist.";
+        String addedShoppingCartText = "Product successfully added to your shopping cart";
+
+        IndexPage indexPage= new IndexPage(driver);
+
+        indexPage.clickOnProduct1();
+        indexPage.clickButtonWishlist();
+
+        assertTrue(indexPage.getWishlistMessage().contains(wishlistText));
+
+        indexPage.clickButtonCancel();
+        indexPage.selectProductSize();
+        indexPage.clickButtonAddToCart();
+
+        assertTrue(indexPage.getAddedShoppingCartMessage().contains(addedShoppingCartText));
+
+//        indexPage.searchProductInPage(item1);
+//        assertTrue(indexPage.IsProductInPage(item1));
+//        assertTrue(indexPage.isDisplayedProduct());
+    }
 }

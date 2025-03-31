@@ -16,7 +16,7 @@ public class ContactUsPage extends BasePage{
     @FindBy(xpath = "//*[@id='contactform-message']")
     private WebElement inputText;
 
-    @FindBy(xpath = "//*[@id=\"content\"]/section/form/footer/input[3]")
+    @FindBy(xpath = "//*[@id='content']/section/form/footer/input[3]")
     private WebElement buttonSend;
 
     @FindBy(xpath = "//*[@id='content']/section/form/div/ul/li")
